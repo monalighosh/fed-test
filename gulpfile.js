@@ -8,6 +8,7 @@ const cleanCSS = require("gulp-clean-css");
 const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify");
 const babel = require("gulp-babel");
+const sourcemaps = require("gulp-sourcemaps");
 
 // File paths
 const htmlFiles = "src/**/*.html";
@@ -27,9 +28,11 @@ gulp.task("html", function() {
 gulp.task("css", function() {
   return gulp
     .src(sassFiles)
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCSS())
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/css"));
 });
 
@@ -45,8 +48,10 @@ gulp.task("images", function() {
 gulp.task("js", function() {
   return gulp
     .src(jsFiles)
+    .pipe(sourcemaps.init())
     .pipe(babel({ presets: ["env"] }))
     .pipe(uglify())
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/js"));
 });
 

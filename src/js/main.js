@@ -3,15 +3,26 @@
 const url = "http://prototype.carter-dev.net/fed-test/items.json";
 const cardsContainer = document.querySelector(".cards-container");
 
-// Function to insert a SVG image in HTML doc
-function insertSvgImg(img, imgClass) {
+// Function to create Object tag for a SVG image
+function createObjSvgTag(img, imgClass) {
   return `<object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="0">
             Sorry! Your browser does not support SVG!
         </object>`;
 }
 
+// Function to insert Object tag in HTML doc
+function insertObjTag(id, documentSize) {
+  if (id === "1") {
+    return createObjSvgTag("arrow-right-white.svg", "arrow--right");
+  } else if (documentSize) {
+    return createObjSvgTag("arrow-down.svg", "arrow--down");
+  } else {
+    return createObjSvgTag("arrow-right.svg", "arrow--right");
+  }
+}
+
 /* 
-Function to output cards in HTML doc. 
+Function to output cards in HTML doc
 Creats HTML card structure with relevant title, description, arrow icon and other details
 */
 function insertCards(title, id, description, documentSize) {
@@ -23,13 +34,7 @@ function insertCards(title, id, description, documentSize) {
             }
             ${id === "1" ? `<p class="cards-container__item-des">${description}</p>` : ``}
             ${documentSize ? `<p class="cards-container__item-pdf">PDF (${documentSize})</p>` : ``}
-            <p><a href="#" class="cards-container__item-arrow">
-              ${
-                documentSize
-                  ? insertSvgImg("arrow-down.svg", "arrow--down")
-                  : insertSvgImg("arrow-right.svg", "arrow--right")
-              }
-            </a></p>
+            <p><a href="#" class="cards-container__item-arrow">${insertObjTag(id, documentSize)} </a></p>
         </div>`;
 }
 
