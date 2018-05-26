@@ -10,12 +10,19 @@ function insertSvgImg(img, imgClass) {
         </object>`;
 }
 
-// Function to output cards in HTML doc
+/* 
+Function to output cards in HTML doc. 
+Creats HTML card structure with relevant title, description, arrow icon and other details
+*/
 function insertCards(title, id, description, documentSize) {
   return `<div class="cards-container__item">
-            <h1 class="cards-container__item-title">${title}</h1>
-            <p class="cards-container__item-des">${id === "1" ? `${description}` : ``}</p>
-            <p class="cards-container__item-pdf">${documentSize ? `PDF (${documentSize})` : ``}</p>
+            ${
+              id === "1"
+                ? `<h1 class="cards-container__item-title first--card">${title}</h1>`
+                : `<h1 class="cards-container__item-title">${title}</h1>`
+            }
+            ${id === "1" ? `<p class="cards-container__item-des">${description}</p>` : ``}
+            ${documentSize ? `<p class="cards-container__item-pdf">PDF (${documentSize})</p>` : ``}
             <p class="cards-container__item-arrow"><a href="">
               ${
                 documentSize

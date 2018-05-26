@@ -9,7 +9,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    @include pdMg(padding, 2.5em 1.3em 1.5em);
+    @include pdMg(padding, 3em 1.3em 1.5em);
     @include pdMg(margin, 0 0.5% 0.9em);
     @include border($lightGrey);
     @include position();
@@ -18,6 +18,10 @@
       background-image: $gradient;
       color: $white;
       max-width: 49%;
+
+      & .cards-container__item-arrow {
+        background: rgba($black, 0.4);
+      }
     }
 
     &-title {
@@ -25,7 +29,7 @@
     }
 
     &-des {
-      font-size: $smFont;
+      font-size: $baseFontSize / 1.1;
     }
 
     &-pdf {
@@ -49,6 +53,12 @@
       @include position(absolute, $bottom: 0, $right: 0);
     }
   }
+}
+
+.first--card {
+  color: $white;
+  font-size: $lgFont;
+  line-height: 1.3;
 }
 
 .img--arrow {

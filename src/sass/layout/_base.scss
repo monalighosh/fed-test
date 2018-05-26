@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  font-size: $mdFont;
+  font-size: $baseFontSize * 1.07;
   color: $darkGrey;
   font-weight: $bold;
 }
