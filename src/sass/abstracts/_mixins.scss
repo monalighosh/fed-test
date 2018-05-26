@@ -1,0 +1,59 @@
+/* Border mixin */
+@mixin border($color, $width: 1px, $style: solid) {
+  border: $width $style $color;
+}
+
+/* Padding, margins mixins */
+// Pass values as a space separated sass list. E.g. @include padMrg(padding, 2em 0);
+@mixin pdMg($property, $values) {
+  #{$property}: $values;
+}
+
+/* Element display */
+@mixin display($property: inline-block) {
+  display: $property;
+}
+
+/* Flex box */
+@mixin flexParent(
+  $direction: row,
+  $wrap: nowrap,
+  $justify: flex-start,
+  $items: stretch,
+  $content: flex-start
+) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $items;
+  align-content: $content;
+}
+
+@mixin flexChild($grow: 0, $shrink: 1, $basis: auto, $alignSelf: auto) {
+  flex: $grow $shrink $basis;
+  align-self: $alignSelf;
+}
+
+/* Shadows */
+@mixin shadow($property, $values...) {
+  #{$property}: $values;
+}
+
+/* Media queries */
+@mixin media($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+/* Clear floats */
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    @include display(table);
+  }
+  &:after {
+    clear: both;
+  }
+}

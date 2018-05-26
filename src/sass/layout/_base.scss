@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  font: $light $baseFontSize $baseFont;
+  background: $white;
+  line-height: 1.5;
+  color: $darkGrey;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: $h1Size;
+  color: $white;
+  font-weight: $bold;
+}
+
+h2 {
+  font-size: $h2Size;
+  color: $darkGrey;
+  font-weight: $mdFont;
+}
+
+.wrapper {
+  width: $fullCover;
+}
+
+main {
+  width: $fullCover;
+  max-width: 1200px;
+  @include border($black);
+  @include pdMg(margin, 0 auto);
+}
