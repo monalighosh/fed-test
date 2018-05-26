@@ -14,6 +14,19 @@
   display: $property;
 }
 
+/* Position mixins */
+@mixin position($property: relative, $top: null, $left: null, $bottom: null, $right: null) {
+  @if $property == fixed or absolute {
+    position: $property;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+  } @else {
+    position: $property;
+  }
+}
+
 /* Flex box */
 @mixin flexParent(
   $direction: row,

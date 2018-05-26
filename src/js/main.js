@@ -18,6 +18,14 @@ xhr.onload = function() {
       output += `<div class="cards-container__item">
         <p class="cards-container__item-title">${card.title}</p>
         <p class="cards-container__item-des">${card.id === "1" ? `${card.description}` : ``}</p>
+        <p class="cards-container__item-pdf">${
+          card.documentSize ? `PDF (${card.documentSize})` : ``
+        }</p>
+        <p class="cards-container__item-arrow"><a href="">${
+          card.documentSize
+            ? `<img src="images/arrow-down.svg"/>`
+            : `<img src="images/arrow-right.svg"/>`
+        }</a></p>
       </div>`;
     });
     cardsContainer.innerHTML = output;
@@ -25,3 +33,5 @@ xhr.onload = function() {
 };
 // Send a XmlHttp request
 xhr.send();
+
+
