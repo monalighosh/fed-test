@@ -21,6 +21,15 @@
 
       & .cards-container__item-arrow {
         background: rgba($black, 0.4);
+        @include transition(background 0.5s ease);
+
+        &:hover {
+          background: rgba($black, 0);
+        }
+      }
+
+      & .arrowSvg {
+        fill: $white;
       }
     }
 
@@ -51,7 +60,31 @@
     &-arrow {
       width: 60px;
       height: 60px;
+      cursor: pointer;
+      background: rgba($lightGrey, 0);
+      @include transition(background 0.5s ease);
       @include position(absolute, $bottom: 0, $right: 0);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      &:hover .arrow--right {
+        transform: translate(-30%, -50%);
+      }
+
+      &:hover .arrow--down {
+        transform: translate(-50%, -30%);
+      }
+
+      &:hover {
+        background: rgba($lightGrey, 1);
+      }
     }
   }
 }
@@ -62,15 +95,16 @@
   line-height: 1.3;
 }
 
-.img--arrow {
+.arrow--down,
+.arrow--right {
   width: 100%;
   max-width: 22px;
   height: auto;
   transform: translate(-50%, -50%);
+  @include transition(transform 0.2s ease-in-out);
   @include position(absolute, 50%, 50%);
 }
 
-object[data*=".svg"] path {
-  fill: red;
-  stroke: black;
+object:focus {
+  outline: none;
 }

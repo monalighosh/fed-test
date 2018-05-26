@@ -5,7 +5,7 @@ const cardsContainer = document.querySelector(".cards-container");
 
 // Function to insert a SVG image in HTML doc
 function insertSvgImg(img, imgClass) {
-  return `<object type="image/svg+xml" data="images/${img}" class="${imgClass}">
+  return `<object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="0">
             Sorry! Your browser does not support SVG!
         </object>`;
 }
@@ -23,11 +23,11 @@ function insertCards(title, id, description, documentSize) {
             }
             ${id === "1" ? `<p class="cards-container__item-des">${description}</p>` : ``}
             ${documentSize ? `<p class="cards-container__item-pdf">PDF (${documentSize})</p>` : ``}
-            <p class="cards-container__item-arrow"><a href="">
+            <p><a href="#" class="cards-container__item-arrow">
               ${
                 documentSize
-                  ? insertSvgImg("arrow-down.svg", "img--arrow")
-                  : insertSvgImg("arrow-right.svg", "img--arrow")
+                  ? insertSvgImg("arrow-down.svg", "arrow--down")
+                  : insertSvgImg("arrow-right.svg", "arrow--right")
               }
             </a></p>
         </div>`;
@@ -49,6 +49,10 @@ xhr.onload = function() {
     });
     cardsContainer.innerHTML = output;
   }
+};
+// On request failure log the error message to the console
+xhr.onerror = function(err) {
+  console.log("An error occurred during the request", err);
 };
 // Send a XmlHttp request
 xhr.send();

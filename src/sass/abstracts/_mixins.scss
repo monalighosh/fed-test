@@ -28,13 +28,7 @@
 }
 
 /* Flex box */
-@mixin flexParent(
-  $direction: row,
-  $wrap: nowrap,
-  $justify: flex-start,
-  $items: stretch,
-  $content: flex-start
-) {
+@mixin flexParent($direction: row, $wrap: nowrap, $justify: flex-start, $items: stretch, $content: flex-start) {
   display: flex;
   flex-flow: $direction $wrap;
   justify-content: $justify;
@@ -50,6 +44,12 @@
 /* Shadows */
 @mixin shadow($property, $values...) {
   #{$property}: $values;
+}
+
+/* Transition */
+/* Use of rest operator allows us to add any number of transition properties */
+@mixin transition($values...) {
+  transition: $values;
 }
 
 /* Media queries */
