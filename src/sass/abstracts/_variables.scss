@@ -5,6 +5,7 @@ $persianGreen: #00ac8a;
 $pacificBlue: #00a4c6;
 $lightGrey: #cfcfcf;
 $darkGrey: #4a4a4a;
+$gradient: linear-gradient(-45deg, #00ac8a, #00a4c6);
 
 // Root
 $baseFont: "Open Sans", sans-serif;
@@ -21,9 +22,7 @@ $mdFont: $baseFontSize * 1.1; // 22px
 $lgFont: $baseFontSize * 1.2; // 24px
 
 // Heading font sizes
-$h1Size: $baseFontSize * 3; // 60px
-$h2Size: $baseFontSize * 2; // 40px
-$h3Size: $baseFontSize * 1.5; // 30px
+$h1Size: $baseFontSize * 1.5; // 60px
 
 // Width & height
 $fullCover: 100%;

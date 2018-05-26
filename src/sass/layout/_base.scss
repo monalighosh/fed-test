@@ -13,15 +13,9 @@ body {
 }
 
 h1 {
-  font-size: $h1Size;
-  color: $white;
-  font-weight: $bold;
-}
-
-h2 {
-  font-size: $h2Size;
+  font-size: $mdFont;
   color: $darkGrey;
-  font-weight: $mdFont;
+  font-weight: $bold;
 }
 
 .wrapper {
