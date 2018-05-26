@@ -16,6 +16,18 @@ h1 {
   font-size: $baseFontSize * 1.07;
   color: $darkGrey;
   font-weight: $bold;
+  @include media(1100px) {
+    font-size: $baseFontSize / 1.02;
+  }
+  @include media(850px) {
+    font-size: $baseFontSize;
+  }
+  @include media(650px) {
+    font-size: $baseFontSize / 1.05;
+  }
+  @include media(550px) {
+    font-size: $baseFontSize / 1.1;
+  }
 }
 
 .wrapper {

@@ -12,8 +12,10 @@ function createObjSvgTag(img, imgClass) {
 
 // Function to insert Object tag in HTML doc
 function insertObjTag(id, documentSize) {
+  // Check if its a first card
   if (id === "1") {
     return createObjSvgTag("arrow-right-white.svg", "arrow--right");
+    // Check if it a card  has pdf documnet size property
   } else if (documentSize) {
     return createObjSvgTag("arrow-down.svg", "arrow--down");
   } else {
