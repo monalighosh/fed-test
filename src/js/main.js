@@ -5,7 +5,7 @@ const cardsContainer = document.querySelector(".cards-container");
 
 // Function to create Object tag for a SVG image
 function createObjSvgTag(img, imgClass) {
-  return `<object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="0">
+  return `<object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}">
             Sorry! Your browser does not support SVG!
         </object>`;
 }
@@ -28,7 +28,7 @@ Function to output cards in HTML doc
 Creats HTML card structure with relevant title, description, arrow icon and other details
 */
 function insertCards(title, id, description, documentSize) {
-  return `<div class="cards-container__item">
+  return `<div class="cards-container__item" tabindex="0">
             ${
               id === "1"
                 ? `<h1 class="cards-container__item-title first--card">${title}</h1>`
@@ -36,7 +36,7 @@ function insertCards(title, id, description, documentSize) {
             }
             ${id === "1" ? `<p class="cards-container__item-des">${description}</p>` : ``}
             ${documentSize ? `<p class="cards-container__item-pdf">PDF (${documentSize})</p>` : ``}
-            <p><a href="#" class="cards-container__item-arrow">${insertObjTag(id, documentSize)} </a></p>
+            <p><a href="#" class="cards-container__item-arrow" role="button">${insertObjTag(id, documentSize)} </a></p>
         </div>`;
 }
 
