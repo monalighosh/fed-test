@@ -9,6 +9,7 @@ Code test for potential Carter front-end developers
 * I have used semantic HTML code structure for better readability and accessibility.
 * CSS Flexbox model is used for flexibility and responsiveness.
 * JavaScript is used to fetch JSON data and load that data in a grid format in HTML doc.
+* A couple of accessiblity guidelines are used to make it keyboard and screen reader accessible.
 
 ### Tools
 
