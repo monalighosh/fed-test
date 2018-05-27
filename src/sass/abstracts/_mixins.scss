@@ -27,20 +27,6 @@
   }
 }
 
-/* Flex box */
-@mixin flexParent($direction: row, $wrap: nowrap, $justify: flex-start, $items: stretch, $content: flex-start) {
-  display: flex;
-  flex-flow: $direction $wrap;
-  justify-content: $justify;
-  align-items: $items;
-  align-content: $content;
-}
-
-@mixin flexChild($grow: 0, $shrink: 1, $basis: auto, $alignSelf: auto) {
-  flex: $grow $shrink $basis;
-  align-self: $alignSelf;
-}
-
 /* Shadows */
 @mixin shadow($property, $values...) {
   #{$property}: $values;

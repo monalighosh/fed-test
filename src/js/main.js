@@ -3,7 +3,10 @@
 const url = "http://prototype.carter-dev.net/fed-test/items.json";
 const cardsContainer = document.querySelector(".cards-container");
 
-// Function to create Object tag for a SVG image
+/* 
+Function to create linked object tag for a SVG image 
+span tag is added for the screen readers accessibility
+*/
 function createObjSvgTag(img, imgClass, linktitle) {
   return `<a href="#" class="cards-container__item-arrow" role="button"><span>Click to ${linktitle}</span>
             <object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="-1">

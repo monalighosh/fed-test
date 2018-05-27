@@ -1,7 +1,4 @@
-html {
-  height: 100%;
-}
-
+// Global body styles
 body {
   font: $light $baseFontSize $baseFont;
   background: $white;
@@ -12,6 +9,7 @@ body {
   overflow-x: hidden;
 }
 
+// Heading styles
 h1 {
   font-size: $baseFontSize * 1.07;
   color: $darkGrey;
@@ -30,25 +28,16 @@ h1 {
   }
 }
 
+// Main wrapper styles
 .wrapper {
   width: $fullCover;
 }
 
+// Main content container styles
 main {
   width: $fullCover;
   max-width: 1200px;
   @include pdMg(margin, 0 auto);
-}
-
-.arrowSvg {
-  fill: $persianGreen;
-  cursor: pointer;
-  border: 1px solid red;
-  @include transition(all 0.5s ease);
-}
-
-.arrowSvg:hover {
-  fill: $white;
 }
 
 
