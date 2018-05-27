@@ -4,22 +4,24 @@ const url = "http://prototype.carter-dev.net/fed-test/items.json";
 const cardsContainer = document.querySelector(".cards-container");
 
 // Function to create Object tag for a SVG image
-function createObjSvgTag(img, imgClass) {
-  return `<object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}">
-            Sorry! Your browser does not support SVG!
-        </object>`;
+function createObjSvgTag(img, imgClass, linktitle) {
+  return `<a href="#" class="cards-container__item-arrow" role="button" title="Click to ${linktitle}"><span>Click to ${linktitle}</span>
+            <object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="-1">
+              Sorry! Your browser does not support SVG!
+            </object>
+          </a>`;
 }
 
 // Function to insert Object tag in HTML doc
 function insertObjTag(id, documentSize) {
   // Check if its a first card
   if (id === "1") {
-    return createObjSvgTag("arrow-right-white.svg", "arrow--right");
+    return createObjSvgTag("arrow-right-white.svg", "arrow--right", "Read More");
     // Check if it a card  has pdf documnet size property
   } else if (documentSize) {
-    return createObjSvgTag("arrow-down.svg", "arrow--down");
+    return createObjSvgTag("arrow-down.svg", "arrow--down", "Download Pdf");
   } else {
-    return createObjSvgTag("arrow-right.svg", "arrow--right");
+    return createObjSvgTag("arrow-right.svg", "arrow--right", "Read More");
   }
 }
 
@@ -35,8 +37,8 @@ function insertCards(title, id, description, documentSize) {
                 : `<h1 class="cards-container__item-title">${title}</h1>`
             }
             ${id === "1" ? `<p class="cards-container__item-des">${description}</p>` : ``}
-            ${documentSize ? `<p class="cards-container__item-pdf">PDF (${documentSize})</p>` : ``}
-            <p><a href="#" class="cards-container__item-arrow" role="button">${insertObjTag(id, documentSize)} </a></p>
+            ${documentSize ? `<p class="cards-container__item-pdf" tabindex="0">PDF (${documentSize})</p>` : ``}
+            <p>${insertObjTag(id, documentSize)} </p>
         </div>`;
 }
 

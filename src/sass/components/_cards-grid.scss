@@ -118,6 +118,14 @@
         height: 40px;
       }
 
+      & span {
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        overflow: hidden;
+        top: -10px;
+      }
+
       &:after {
         content: "";
         position: absolute;
