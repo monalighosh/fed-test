@@ -17,6 +17,11 @@ Code test for potential Carter front-end developers
 * Gulp for bundling, minifying HTML, CSS and JavaScript files, Sass to CSS compilation, live-server testing etc.
 * Sublime Text 3 as a text editor.
 
+### Directory structure
+
+* All raw files are stored in a "src" directory.
+* All production files are stored in a "build" directory.
+
 ### Demo
 
 [Click here to view live demo.](http://www.monalighosh.com/fed-test/)
