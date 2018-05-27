@@ -1,24 +1,21 @@
 # Carter FED Test
+
 Code test for potential Carter front-end developers
 
-## The challenge:
-Use a heady combination of front-end technologies to produce the card grid layout in `/CardGrid.jpg` (don't forget to make it responsive). All the content for the cards is in a .json file - read from this to output your cards onto the page.
+## The solution:
 
-The JSON can be found here - http://prototype.carter-dev.net/fed-test/items.json
+### Tech Stack: HTML, CSS and JavaScript
 
-You can use a framework if you like but avoid plugins - no need to change your style, just code how you normally would.
+* I have used semantic HTML code structure for better readability and accessibility.
+* CSS Flexbox model is used for flexibility and responsiveness.
+* JavaScript is used to fetch JSON data and load that data in a grid format in HTML doc.
 
-If you have time, apply some nice hover style to the cards, whatever you like.
+### Tools
 
-Comment where needed.
+* NPM for installing and maintaining project dependencies.
+* Gulp for bundling, minifying HTML, CSS and JavaScript files, Sass to CSS compilation, live-server testing etc.
+* Sublime Text 3 as a text editor.
 
-Feel free to ask questions.
+### Demo
 
-## Notes
-
-### Fonts
-Open Sans - weights: 400, 600, 700
-Available on Google Fonts
-
-### Icons
-Arrow & document SVG files are provided in the `/svg` directory
+[Click here to view live demo.](http://www.monalighosh.com/fed-test/)
