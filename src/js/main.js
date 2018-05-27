@@ -5,7 +5,7 @@ const cardsContainer = document.querySelector(".cards-container");
 
 // Function to create Object tag for a SVG image
 function createObjSvgTag(img, imgClass, linktitle) {
-  return `<a href="#" class="cards-container__item-arrow" role="button" title="Click to ${linktitle}"><span>Click to ${linktitle}</span>
+  return `<a href="#" class="cards-container__item-arrow" role="button"><span>Click to ${linktitle}</span>
             <object type="image/svg+xml" width="60px" height="60px" data="images/${img}" class="${imgClass}" tabindex="-1">
               Sorry! Your browser does not support SVG!
             </object>
